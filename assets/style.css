@@ -113,25 +113,57 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-.hero-content {
-    max-width: 800px;
+.hero-flex-container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+}
+
+.hero-content {
+    flex: 1;
 }
 
 .hero-content h2 {
-    font-size: 32px;
+    font-size: 3rem;
     color: var(--text-primary);
-    font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 18px;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
+.features-list {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-item .material-icons {
+    color: var(--green);
+}
+
+.feature-item span:not(.material-icons) {
+    color: var(--text-secondary);
+}
+
+.converter-wrapper {
+    flex: 1;
+}
+
+/* Converter Card */
 .converter-card {
     background: var(--background-white);
     border: 1px solid var(--border-color);
@@ -267,207 +299,6 @@ body {
     font-weight: 500;
 }
 
-/* Quick Convert Section */
-.quick-convert {
-    padding: 64px 0;
-    background: var(--background-white);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.quick-convert h2 {
-    font-size: 28px;
-    color: var(--text-primary);
-    margin-bottom: 32px;
-    text-align: center;
-    font-weight: 500;
-}
-
-.currency-pairs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.pair-card {
-    background: var(--background-white);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    transition: all 0.3s;
-}
-
-.pair-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: var(--primary-color);
-}
-
-.pair-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    font-weight: 500;
-    font-size: 18px;
-}
-
-.pair-header .material-icons {
-    color: var(--green);
-}
-
-.pair-header .material-icons.trending_down {
-    color: var(--red);
-}
-
-.pair-rate {
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.pair-change {
-    color: var(--green);
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-.pair-change.negative {
-    color: var(--red);
-}
-
-.convert-now-btn {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.convert-now-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Top Currencies Section */
-.top-currencies {
-    padding: 64px 0;
-    background: var(--background-light);
-}
-
-.top-currencies h2 {
-    font-size: 28px;
-    color: var(--text-primary);
-    margin-bottom: 32px;
-    text-align: center;
-    font-weight: 500;
-}
-
-.currencies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.currency-card {
-    background: var(--background-white);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.3s;
-}
-
-.currency-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: var(--primary-color);
-}
-
-.currency-flag {
-    width: 56px;
-    height: 36px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: var(--shadow-sm);
-}
-
-.currency-info h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 4px;
-    color: var(--text-primary);
-}
-
-.currency-code {
-    color: var(--text-secondary);
-    font-size: 14px;
-    font-weight: 500;
-}
-
-/* Features Section */
-.features {
-    padding: 64px 0;
-    background: var(--background-white);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.feature-card {
-    padding: 32px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    transition: all 0.3s;
-    text-align: center;
-    background: var(--background-white);
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: var(--primary-color);
-}
-
-.feature-card .material-icons {
-    font-size: 40px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    font-size: 20px;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.feature-card p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
 /* Footer */
 .footer {
     background: var(--text-primary);
@@ -582,8 +413,22 @@ body {
         padding: 32px 0;
     }
 
+    .hero-flex-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
     .hero-content h2 {
         font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .features-list {
+        flex-direction: column;
+        gap: 12px;
     }
 
     .converter-card {
@@ -600,30 +445,6 @@ body {
     .input-group select {
         width: 100%;
     }
-
-    .currency-pairs-grid,
-    .currencies-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        padding: 0 16px;
-        gap: 16px;
-    }
-
-    .pair-card,
-    .currency-card,
-    .feature-card {
-        padding: 16px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 480px) {
@@ -638,10 +459,6 @@ body {
     .convert-btn {
         padding: 12px 24px;
         font-size: 14px;
-    }
-
-    .pair-rate {
-        font-size: 24px;
     }
 
     .footer-section h3 {
