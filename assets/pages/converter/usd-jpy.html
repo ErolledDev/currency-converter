@@ -3,56 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USD to JPY Exchange Rate | Currency Exchange</title>
-    <meta name="description" content="Convert US Dollar (USD) to Japanese Yen (JPY). Get live exchange rates, historical data, and expert analysis.">
+    <title>USD to JPY Exchange Rate | Live Currency Converter | Currency Exchange</title>
+    <meta name="description" content="Convert US Dollar (USD) to Japanese Yen (JPY). Get live exchange rates, historical data, market analysis, and expert insights. Updated in real-time.">
+    <meta name="keywords" content="USD to JPY, dollar to yen, currency converter, exchange rate, forex">
+    <meta property="og:title" content="USD to JPY Exchange Rate | Live Currency Converter">
+    <meta property="og:description" content="Convert US Dollar (USD) to Japanese Yen (JPY). Get live exchange rates, historical data, and expert analysis.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="canonical" href="https://currencyexchange.com/converter/usd-jpy" />
 </head>
 <body>
-    <header class="header">
-        <!-- Header content will be injected by JavaScript -->
-    </header>
+    <header class="header"></header>
 
-    <main>
+    <main class="currency-page">
         <article class="conversion-article">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">USD to JPY</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
+
             <header class="conversion-header">
                 <h1>USD to JPY Exchange Rate</h1>
                 <div class="meta">Last updated: <span class="update-time"></span></div>
             </header>
 
-            <div class="live-rate-widget">
-                <h3>Live USD to JPY Rate</h3>
+            <nav class="table-of-contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#live-rate">Live Exchange Rate</a></li>
+                    <li><a href="#understanding">Understanding USD/JPY</a></li>
+                    <li><a href="#factors">Influencing Factors</a></li>
+                    <li><a href="#historical">Historical Performance</a></li>
+                    <li><a href="#forecast">Rate Forecast</a></li>
+                </ol>
+            </nav>
+
+            <div id="live-rate" class="live-rate-widget">
+                <h2>Live USD to JPY Rate</h2>
                 <div class="rate-display">Loading...</div>
                 <div class="rate-update-time"></div>
             </div>
 
             <div class="conversion-content">
-                <h2>Understanding USD to JPY Exchange Rate</h2>
-                <p>The USD/JPY exchange rate represents how many Japanese Yen (JPY) can be bought with one US Dollar (USD). This currency pair is one of the most traded in the forex market, reflecting the economic relationship between the United States and Japan.</p>
+                <section id="understanding">
+                    <h2>Understanding USD to JPY Exchange Rate</h2>
+                    <p>The USD/JPY exchange rate represents how many Japanese Yen (JPY) can be bought with one US Dollar (USD). This currency pair is one of the most traded in the forex market, reflecting the economic relationship between the United States and Japan.</p>
+                    
+                    <div class="info-box">
+                        <h3>Key Points</h3>
+                        <ul>
+                            <li>Major currency pair in forex markets</li>
+                            <li>Reflects US-Japan economic relations</li>
+                            <li>Important for international trade</li>
+                            <li>Influenced by monetary policies</li>
+                        </ul>
+                    </div>
+                </section>
 
-                <h3>Factors Affecting USD/JPY Rate</h3>
-                <p>Several key factors influence the USD/JPY exchange rate:</p>
-                <ul>
-                    <li>Interest rate differentials between the US Federal Reserve and Bank of Japan</li>
-                    <li>Economic indicators from both countries</li>
-                    <li>Political developments and trade relations</li>
-                    <li>Global market sentiment and risk appetite</li>
-                </ul>
+                <section id="factors">
+                    <h2>Factors Affecting USD/JPY Rate</h2>
+                    <p>Several key factors influence the USD/JPY exchange rate:</p>
+                    <div class="factors-grid">
+                        <div class="factor-card">
+                            <span class="material-icons">account_balance</span>
+                            <h3>Monetary Policy</h3>
+                            <p>Interest rate differentials between the US Federal Reserve and Bank of Japan</p>
+                        </div>
+                        <div class="factor-card">
+                            <span class="material-icons">trending_up</span>
+                            <h3>Economic Indicators</h3>
+                            <p>GDP growth, inflation rates, and employment data from both countries</p>
+                        </div>
+                        <div class="factor-card">
+                            <span class="material-icons">policy</span>
+                            <h3>Political Events</h3>
+                            <p>Government policies, elections, and international relations</p>
+                        </div>
+                        <div class="factor-card">
+                            <span class="material-icons">public</span>
+                            <h3>Global Markets</h3>
+                            <p>Risk sentiment and international trade conditions</p>
+                        </div>
+                    </div>
+                </section>
 
-                <h3>Historical Performance</h3>
-                <p>The USD/JPY pair has historically been known for its stability, with the Japanese Yen often serving as a safe-haven currency during times of global economic uncertainty. The exchange rate has seen significant movements based on major economic events and policy changes in both countries.</p>
+                <section id="historical">
+                    <h2>Historical Performance</h2>
+                    <p>The USD/JPY pair has historically been known for its stability, with the Japanese Yen often serving as a safe-haven currency during times of global economic uncertainty. The exchange rate has seen significant movements based on major economic events and policy changes in both countries.</p>
+                    
+                    <div class="chart-container">
+                        <div class="historical-chart">
+                            <!-- Chart placeholder -->
+                            <div class="chart-placeholder">Historical chart will be displayed here</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="forecast">
+                    <h2>USD/JPY Rate Forecast</h2>
+                    <div class="forecast-grid">
+                        <div class="forecast-card">
+                            <h3>Short-term Outlook</h3>
+                            <p>Analysis of immediate market trends and potential short-term movements in the USD/JPY pair.</p>
+                        </div>
+                        <div class="forecast-card">
+                            <h3>Long-term Projection</h3>
+                            <p>Extended forecast based on economic fundamentals and structural factors.</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </article>
+
+        <aside class="currency-sidebar">
+            <div class="widget market-news">
+                <h2>Latest Market News</h2>
+                <ul class="news-list">
+                    <li>
+                        <span class="news-date">Today</span>
+                        <a href="#" class="news-link">Bank of Japan Monetary Policy Update</a>
+                    </li>
+                    <li>
+                        <span class="news-date">Yesterday</span>
+                        <a href="#" class="news-link">US Federal Reserve Interest Rate Decision</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget related-pairs">
+                <h2>Related Currency Pairs</h2>
+                <ul class="pairs-list">
+                    <li><a href="/assets/pages/converter/usd-eur.html">USD/EUR</a></li>
+                    <li><a href="/assets/pages/converter/usd-gbp.html">USD/GBP</a></li>
+                    <li><a href="/assets/pages/converter/eur-jpy.html">EUR/JPY</a></li>
+                </ul>
+            </div>
+
+            <div class="widget economic-calendar">
+                <h2>Economic Calendar</h2>
+                <div class="calendar-events">
+                    <div class="event">
+                        <div class="event-time">09:00 GMT</div>
+                        <div class="event-title">Japan GDP Data Release</div>
+                    </div>
+                    <div class="event">
+                        <div class="event-time">14:30 GMT</div>
+                        <div class="event-title">US Retail Sales</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </main>
 
-    <footer class="footer">
-        <!-- Footer content will be injected by JavaScript -->
-    </footer>
+    <footer class="footer"></footer>
 
-    <script>
+    <script type="module">
+        import { initializeHeader } from '/assets/components/header.js';
+        import { initializeFooter } from '/assets/components/footer.js';
+
         const API_BASE_URL = "https://api.frankfurter.app";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeHeader();
+            initializeFooter();
+            updateLiveRate();
+            setInterval(updateLiveRate, 60000);
+            initializeScrollSpy();
+        });
 
         async function updateLiveRate() {
             try {
@@ -70,9 +198,27 @@
             }
         }
 
-        // Update rate every minute
-        updateLiveRate();
-        setInterval(updateLiveRate, 60000);
+        function initializeScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.table-of-contents a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

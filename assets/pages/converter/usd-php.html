@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <header class="header">
-        <!-- Header content will be injected by JavaScript -->
-    </header>
+    <header class="header"></header>
 
     <main>
         <article class="conversion-article">
@@ -48,12 +46,20 @@
         </article>
     </main>
 
-    <footer class="footer">
-        <!-- Footer content will be injected by JavaScript -->
-    </footer>
+    <footer class="footer"></footer>
 
-    <script>
+    <script type="module">
+        import { initializeHeader } from '/assets/components/header.js';
+        import { initializeFooter } from '/assets/components/footer.js';
+
         const API_BASE_URL = "https://api.frankfurter.app";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeHeader();
+            initializeFooter();
+            updateLiveRate();
+            setInterval(updateLiveRate, 60000);
+        });
 
         async function updateLiveRate() {
             try {
@@ -70,10 +76,6 @@
                 document.querySelector('.rate-display').textContent = 'Rate unavailable';
             }
         }
-
-        // Update rate every minute
-        updateLiveRate();
-        setInterval(updateLiveRate, 60000);
     </script>
 </body>
 </html>

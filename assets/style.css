@@ -616,3 +616,413 @@ body {
         font-size: 1.6rem;
     }
 }
+
+/* Currency Conversion Page Styles */
+.currency-page {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.conversion-article {
+    background: var(--background-white);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin-bottom: 24px;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin-left: 8px;
+    color: var(--text-secondary);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Table of Contents */
+.table-of-contents {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.table-of-contents h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.table-of-contents ol {
+    list-style: none;
+    counter-reset: toc-counter;
+}
+
+.table-of-contents li {
+    counter-increment: toc-counter;
+    margin-bottom: 12px;
+}
+
+.table-of-contents li::before {
+    content: counter(toc-counter) ".";
+    color: var(--primary-color);
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.table-of-contents a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.table-of-contents a:hover,
+.table-of-contents a.active {
+    color: var(--primary-color);
+    padding-left: 8px;
+}
+
+/* Content Sections */
+.conversion-header {
+    margin-bottom: 32px;
+}
+
+.conversion-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.conversion-header .meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Live Rate Widget */
+.live-rate-widget {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 12px;
+    padding: 32px;
+    margin: 32px 0;
+    color: white;
+}
+
+.live-rate-widget h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.rate-display {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.rate-update-time {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Info Box */
+.info-box {
+    background: var(--background-light);
+    border-left: 4px solid var(--primary-color);
+    padding: 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-box li::before {
+    content: "•";
+    color: var(--primary-color);
+}
+
+/* Factors Grid */
+.factors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.factor-card {
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.factor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.factor-card .material-icons {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.factor-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.factor-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Chart Container */
+.chart-container {
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.chart-placeholder {
+    background: var(--background-light);
+    height: 300px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+/* Forecast Grid */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.forecast-card {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.forecast-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.forecast-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Sidebar Widgets */
+.currency-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.widget {
+    background: var(--background-white);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.widget h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+/* News List */
+.news-list {
+    list-style: none;
+}
+
+.news-list li {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.news-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.news-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.news-link:hover {
+    color: var(--primary-color);
+}
+
+/* Related Pairs */
+.pairs-list {
+    list-style: none;
+}
+
+.pairs-list li {
+    margin-bottom: 12px;
+}
+
+.pairs-list a {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.pairs-list a:hover {
+    background: var(--background-light);
+    color: var(--primary-color);
+}
+
+/* Economic Calendar */
+.calendar-events {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.event {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.event:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.event-time {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.event-title {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .currency-page {
+        grid-template-columns: 1fr;
+    }
+
+    .currency-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .conversion-header h1 {
+        font-size: 2rem;
+    }
+
+    .rate-display {
+        font-size: 2rem;
+    }
+
+    .factors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conversion-article {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .currency-page {
+        padding: 20px 16px;
+    }
+
+    .conversion-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .rate-display {
+        font-size: 1.6rem;
+    }
+
+    .table-of-contents {
+        padding: 16px;
+    }
+
+    .live-rate-widget {
+        padding: 20px;
+    }
+}

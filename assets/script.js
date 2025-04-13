@@ -1,43 +1,12 @@
-const API_BASE_URL = "https://api.frankfurter.app";
+// API Configuration
+export const API_BASE_URL = "https://api.frankfurter.app";
 
-function initializeNavigation() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav a');
-
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
+// Currency conversion utilities
+function calculateExchangeRate(amount, baseRate, targetRate) {
+    if (typeof amount !== 'number' || isNaN(amount) || typeof targetRate !== 'number' || targetRate <= 0) {
+        return 0;
     }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        });
-    });
-
-    function updateActiveLink() {
-        const hash = window.location.hash || '#converter';
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === hash);
-        });
-    }
-
-    window.addEventListener('hashchange', updateActiveLink);
-    updateActiveLink();
-}
-
-function formatDate(date) {
-    return new Intl.DateTimeFormat('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short'
-    }).format(date);
+    return (amount / baseRate) * targetRate;
 }
 
 async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
@@ -90,11 +59,15 @@ async function fetchExchangeRates(base = "USD") {
     }
 }
 
-function calculateExchangeRate(amount, baseRate, targetRate) {
-    if (typeof amount !== 'number' || isNaN(amount) || typeof targetRate !== 'number' || targetRate <= 0) {
-        return 0;
-    }
-    return (amount / baseRate) * targetRate;
+function formatDate(date) {
+    return new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+    }).format(date);
 }
 
 function getUrlParameters() {
@@ -114,7 +87,7 @@ function updateUrlParameters(amount, from, to) {
     window.history.replaceState({}, '', url);
 }
 
-function initializeHeroSection() {
+export function initializeHeroSection() {
     const container = document.getElementById('hero-container');
     container.innerHTML = `
         <section class="hero">
@@ -262,8 +235,3 @@ async function initializeConverter() {
         lastUpdate.textContent = '';
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializeNavigation();
-    initializeHeroSection();
-});
