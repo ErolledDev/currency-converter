@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Real-time currency converter with live exchange rates for over 30 major world currencies.">
-    <title>Currency Exchange - Real-Time Converter</title>
+    <title>Free Currency Converter - Live Exchange Rates | Currency Exchange</title>
+    <meta name="description" content="Convert currencies for free with our real-time currency converter. Get live exchange rates, historical data, and accurate conversions for 170+ world currencies.">
+    <meta name="keywords" content="currency converter, exchange rates, free currency conversion, live rates, forex converter">
+    <meta name="author" content="Currency Exchange">
+    <meta property="og:title" content="Free Currency Converter - Live Exchange Rates">
+    <meta property="og:description" content="Convert currencies for free with our real-time currency converter. Get live exchange rates and accurate conversions for 170+ world currencies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Currency Converter - Live Exchange Rates">
+    <meta name="twitter:description" content="Convert currencies for free with our real-time currency converter. Get live exchange rates for 170+ world currencies.">
+    <link rel="canonical" href="https://your-domain.com">
     <link rel="stylesheet" href="/assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h2>Currency Exchange</h2>
+                <h1>Currency Exchange</h1>
             </div>
-            <nav class="nav">
+            <nav class="nav" aria-label="Main navigation">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/" aria-current="page">Home</a></li>
                     <li><a href="/historical-rates">Historical Rates</a></li>
                     <li><a href="/currency-charts">Charts</a></li>
                     <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -31,10 +45,31 @@
     <main>
         <div id="hero-container"></div>
         <div id="features-container"></div>
+        <div id="popular-conversions"></div>
+        <div id="why-choose-us"></div>
+        <div id="currency-news"></div>
+        <div id="faq-section"></div>
+        <div id="cta-section"></div>
     </main>
 
     <div id="footer-container"></div>
 
     <script type="module" src="/assets/index.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Currency Exchange Converter",
+      "description": "Free real-time currency converter with live exchange rates for 170+ world currencies",
+      "url": "https://your-domain.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 </body>
 </html>
