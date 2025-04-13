@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USD to JPY Exchange Rate | Currency Exchange</title>
+    <meta name="description" content="Convert US Dollar (USD) to Japanese Yen (JPY). Get live exchange rates, historical data, and expert analysis.">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header class="header">
+        <!-- Header content will be injected by JavaScript -->
+    </header>
+
+    <main>
+        <article class="conversion-article">
+            <header class="conversion-header">
+                <h1>USD to JPY Exchange Rate</h1>
+                <div class="meta">Last updated: <span class="update-time"></span></div>
+            </header>
+
+            <div class="live-rate-widget">
+                <h3>Live USD to JPY Rate</h3>
+                <div class="rate-display">Loading...</div>
+                <div class="rate-update-time"></div>
+            </div>
+
+            <div class="conversion-content">
+                <h2>Understanding USD to JPY Exchange Rate</h2>
+                <p>The USD/JPY exchange rate represents how many Japanese Yen (JPY) can be bought with one US Dollar (USD). This currency pair is one of the most traded in the forex market, reflecting the economic relationship between the United States and Japan.</p>
+
+                <h3>Factors Affecting USD/JPY Rate</h3>
+                <p>Several key factors influence the USD/JPY exchange rate:</p>
+                <ul>
+                    <li>Interest rate differentials between the US Federal Reserve and Bank of Japan</li>
+                    <li>Economic indicators from both countries</li>
+                    <li>Political developments and trade relations</li>
+                    <li>Global market sentiment and risk appetite</li>
+                </ul>
+
+                <h3>Historical Performance</h3>
+                <p>The USD/JPY pair has historically been known for its stability, with the Japanese Yen often serving as a safe-haven currency during times of global economic uncertainty. The exchange rate has seen significant movements based on major economic events and policy changes in both countries.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <!-- Footer content will be injected by JavaScript -->
+    </footer>
+
+    <script>
+        const API_BASE_URL = "https://api.frankfurter.app";
+
+        async function updateLiveRate() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/latest?from=USD&to=JPY`);
+                const data = await response.json();
+                const rate = data.rates.JPY;
+                const timestamp = new Date();
+
+                document.querySelector('.rate-display').textContent = `1 USD = ${rate.toFixed(2)} JPY`;
+                document.querySelector('.rate-update-time').textContent = `Last updated: ${timestamp.toLocaleString()}`;
+                document.querySelector('.update-time').textContent = timestamp.toLocaleString();
+            } catch (error) {
+                console.error('Error fetching rate:', error);
+                document.querySelector('.rate-display').textContent = 'Rate unavailable';
+            }
+        }
+
+        // Update rate every minute
+        updateLiveRate();
+        setInterval(updateLiveRate, 60000);
+    </script>
+</body>
+</html>

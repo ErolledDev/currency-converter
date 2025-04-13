@@ -1,0 +1,150 @@
+/* Currency Conversion Page Styles */
+.conversion-article {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.conversion-header {
+    margin-bottom: 32px;
+}
+
+.conversion-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.conversion-header .meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.conversion-content {
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.conversion-content p {
+    margin-bottom: 20px;
+}
+
+.conversion-content h2 {
+    font-size: 1.8rem;
+    margin: 32px 0 16px;
+    color: var(--text-primary);
+}
+
+.conversion-content h3 {
+    font-size: 1.4rem;
+    margin: 24px 0 12px;
+    color: var(--text-primary);
+}
+
+.live-rate-widget {
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+    box-shadow: var(--shadow);
+}
+
+.live-rate-widget h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.rate-display {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.rate-update-time {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 32px 0;
+    z-index: 1000;
+}
+
+.mega-menu.active {
+    display: block;
+}
+
+.mega-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 0 24px;
+}
+
+.mega-menu-section {
+    min-width: 200px;
+}
+
+.mega-menu-section h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.mega-menu-list {
+    list-style: none;
+}
+
+.mega-menu-list li {
+    margin-bottom: 12px;
+}
+
+.mega-menu-list a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.mega-menu-list a:hover {
+    color: var(--primary-color);
+}
+
+.mega-menu-list .rate {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .mega-menu-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .conversion-header h1 {
+        font-size: 2rem;
+    }
+
+    .rate-display {
+        font-size: 1.6rem;
+    }
+}
