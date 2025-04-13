@@ -135,15 +135,22 @@ function initializeMegaMenu() {
 
 async function updateMegaMenuRates() {
     try {
-        const response = await fetch(`${API_BASE_URL}/latest?from=USD`);
-        const data = await response.json();
+        const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CHF'];
+        const rates = {};
+
+        // Fetch rates for each base currency
+        await Promise.all(currencies.map(async (currency) => {
+            const response = await fetch(`${API_BASE_URL}/latest?from=${currency}`);
+            const data = await response.json();
+            rates[currency] = data.rates;
+        }));
 
         document.querySelectorAll('.rate').forEach(rateElement => {
             const from = rateElement.dataset.from;
             const to = rateElement.dataset.to;
             
-            if (from === 'USD') {
-                rateElement.textContent = `${data.rates[to]?.toFixed(2) || 'N/A'} ${to}`;
+            if (rates[from] && rates[from][to]) {
+                rateElement.textContent = ` (${rates[from][to].toFixed(2)})`;
             }
         });
     } catch (error) {
