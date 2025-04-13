@@ -32,142 +32,6 @@
 
     <main>
         <div id="hero-container"></div>
-        <div id="quick-convert-container">
-            <section class="quick-convert">
-                <div class="container">
-                    <h2>Popular Currency Pairs</h2>
-                    <div class="currency-pairs-grid">
-                        <div class="pair-card" data-from="USD" data-to="EUR">
-                            <div class="pair-header">
-                                <span>USD/EUR</span>
-                                <span class="material-icons">trending_up</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change">+0.25%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="EUR" data-to="GBP">
-                            <div class="pair-header">
-                                <span>EUR/GBP</span>
-                                <span class="material-icons">trending_down</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change negative">-0.15%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="GBP" data-to="JPY">
-                            <div class="pair-header">
-                                <span>GBP/JPY</span>
-                                <span class="material-icons">trending_up</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change">+0.42%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="USD" data-to="JPY">
-                            <div class="pair-header">
-                                <span>USD/JPY</span>
-                                <span class="material-icons">trending_up</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change">+0.18%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <!-- Additional currency pairs -->
-                        <div class="pair-card" data-from="USD" data-to="CAD">
-                            <div class="pair-header">
-                                <span>USD/CAD</span>
-                                <span class="material-icons">trending_up</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change">+0.30%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="AUD" data-to="USD">
-                            <div class="pair-header">
-                                <span>AUD/USD</span>
-                                <span class="material-icons">trending_down</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change negative">-0.22%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="EUR" data-to="CHF">
-                            <div class="pair-header">
-                                <span>EUR/CHF</span>
-                                <span class="material-icons">trending_up</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change">+0.15%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                        <div class="pair-card" data-from="NZD" data-to="USD">
-                            <div class="pair-header">
-                                <span>NZD/USD</span>
-                                <span class="material-icons">trending_down</span>
-                            </div>
-                            <div class="pair-rate">Loading...</div>
-                            <div class="pair-change negative">-0.12%</div>
-                            <button class="convert-now-btn">Convert Now</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <div id="top-currencies-container">
-            <section class="top-currencies">
-                <div class="container">
-                    <h2>Top World Currencies</h2>
-                    <div class="currencies-grid">
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/us.png" alt="USD" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>US Dollar</h3>
-                                <p class="currency-code">USD</p>
-                            </div>
-                        </div>
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/eu.png" alt="EUR" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>Euro</h3>
-                                <p class="currency-code">EUR</p>
-                            </div>
-                        </div>
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/gb.png" alt="GBP" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>British Pound</h3>
-                                <p class="currency-code">GBP</p>
-                            </div>
-                        </div>
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/jp.png" alt="JPY" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>Japanese Yen</h3>
-                                <p class="currency-code">JPY</p>
-                            </div>
-                        </div>
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/ch.png" alt="CHF" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>Swiss Franc</h3>
-                                <p class="currency-code">CHF</p>
-                            </div>
-                        </div>
-                        <div class="currency-card">
-                            <img src="https://flagcdn.com/w80/au.png" alt="AUD" class="currency-flag">
-                            <div class="currency-info">
-                                <h3>Australian Dollar</h3>
-                                <p class="currency-code">AUD</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <div id="features-container"></div>
     </main>
 
     <footer class="footer">
@@ -292,38 +156,77 @@
             return (amount / baseRate) * targetRate;
         }
 
+        function getUrlParameters() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                amount: parseFloat(params.get('amount')) || 1,
+                from: params.get('from')?.toUpperCase() || 'USD',
+                to: params.get('to')?.toUpperCase() || 'EUR'
+            };
+        }
+
+        function updateUrlParameters(amount, from, to) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('amount', amount);
+            url.searchParams.set('from', from);
+            url.searchParams.set('to', to);
+            window.history.replaceState({}, '', url);
+        }
+
         function initializeHeroSection() {
             const container = document.getElementById('hero-container');
             container.innerHTML = `
-                <section class="hero">
+                <section class="hero" style="background: var(--background-white);">
                     <div class="container">
-                        <div class="hero-content">
-                            <h2>Currency Converter</h2>
-                            <p>Get real-time exchange rates for world currencies</p>
-                            
-                            <div class="converter-card">
-                                <div class="last-update"></div>
-                                <div class="converter-form">
-                                    <div class="input-group">
-                                        <input type="number" id="amount" value="1" min="0" step="any" aria-label="Amount" placeholder="Enter amount">
-                                        <select id="fromCurrency" aria-label="From currency"></select>
+                        <div style="display: flex; align-items: center; gap: 48px; max-width: 1200px; margin: 0 auto;">
+                            <div style="flex: 1;">
+                                <h2 style="font-size: 3rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.2;">
+                                    Convert Currencies in Real-Time
+                                </h2>
+                                <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+                                    Get accurate exchange rates for 170+ world currencies. Fast, reliable, and always up-to-date.
+                                </p>
+                                <div style="display: flex; gap: 16px; margin-bottom: 2rem;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="material-icons" style="color: var(--green);">check_circle</span>
+                                        <span style="color: var(--text-secondary);">Real-time rates</span>
                                     </div>
-                                    
-                                    <button id="swap-currencies" class="swap-btn" aria-label="Swap currencies">
-                                        <span class="material-icons">swap_vert</span>
-                                    </button>
-                                    
-                                    <div class="input-group">
-                                        <input type="number" id="result" readonly aria-label="Result" placeholder="Converted amount">
-                                        <select id="toCurrency" aria-label="To currency"></select>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="material-icons" style="color: var(--green);">check_circle</span>
+                                        <span style="color: var(--text-secondary);">170+ currencies</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="material-icons" style="color: var(--green);">check_circle</span>
+                                        <span style="color: var(--text-secondary);">Free to use</span>
                                     </div>
                                 </div>
-                                
-                                <button id="convert" class="convert-btn">
-                                    <span class="material-icons">currency_exchange</span>
-                                    Convert
-                                </button>
-                                <p id="rate-info" class="rate-info"></p>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <div class="converter-card">
+                                    <div class="last-update"></div>
+                                    <div class="converter-form">
+                                        <div class="input-group">
+                                            <input type="number" id="amount" value="1" min="0" step="any" aria-label="Amount" placeholder="Enter amount">
+                                            <select id="fromCurrency" aria-label="From currency"></select>
+                                        </div>
+                                        
+                                        <button id="swap-currencies" class="swap-btn" aria-label="Swap currencies">
+                                            <span class="material-icons">swap_vert</span>
+                                        </button>
+                                        
+                                        <div class="input-group">
+                                            <input type="number" id="result" readonly aria-label="Result" placeholder="Converted amount">
+                                            <select id="toCurrency" aria-label="To currency"></select>
+                                        </div>
+                                    </div>
+                                    
+                                    <button id="convert" class="convert-btn">
+                                        <span class="material-icons">currency_exchange</span>
+                                        Convert
+                                    </button>
+                                    <p id="rate-info" class="rate-info"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -331,35 +234,6 @@
             `;
 
             initializeConverter();
-        }
-
-        function initializeFeaturesSection() {
-            const container = document.getElementById('features-container');
-            container.innerHTML = `
-                <section class="features">
-                    <div class="container">
-                        <div class="features-grid">
-                            <div class="feature-card">
-                                <span class="material-icons">update</span>
-                                <h3>Real-Time Data</h3>
-                                <p>Get live exchange rates updated every minute</p>
-                            </div>
-                            
-                            <div class="feature-card">
-                                <span class="material-icons">public</span>
-                                <h3>170+ Currencies</h3>
-                                <p>Convert between major world currencies</p>
-                            </div>
-                            
-                            <div class="feature-card">
-                                <span class="material-icons">verified</span>
-                                <h3>Reliable & Accurate</h3>
-                                <p>Trusted data from leading financial sources</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            `;
         }
 
         async function initializeConverter() {
@@ -371,11 +245,12 @@
             const swapButton = document.getElementById('swap-currencies');
             const convertButton = document.getElementById('convert');
             const lastUpdate = document.querySelector('.last-update');
-            const pairCards = document.querySelectorAll('.pair-card');
 
             let lastFetchTimestamp = 0;
             const REFRESH_INTERVAL = 60000;
 
+            const urlParams = getUrlParameters();
+            
             try {
                 const initialRates = await fetchExchangeRates();
                 
@@ -389,32 +264,9 @@
                 fromCurrency.add(new Option(initialRates.base, initialRates.base));
                 toCurrency.add(new Option(initialRates.base, initialRates.base));
                 
-                fromCurrency.value = initialRates.base;
-                toCurrency.value = Object.keys(initialRates.rates)[0];
-
-                // Initialize pair cards with rates
-                pairCards.forEach(async card => {
-                    const from = card.dataset.from;
-                    const to = card.dataset.to;
-                    const rateElement = card.querySelector('.pair-rate');
-                    const convertNowBtn = card.querySelector('.convert-now-btn');
-
-                    try {
-                        const rates = await fetchExchangeRates(from);
-                        const rate = to === rates.base ? 1 : rates.rates[to];
-                        rateElement.textContent = rate.toFixed(4);
-
-                        convertNowBtn.addEventListener('click', () => {
-                            fromCurrency.value = from;
-                            toCurrency.value = to;
-                            window.location.hash = '#converter';
-                            performConversion(true);
-                        });
-                    } catch (error) {
-                        rateElement.textContent = 'Error';
-                        console.error('Error fetching rate:', error);
-                    }
-                });
+                amount.value = urlParams.amount;
+                fromCurrency.value = urlParams.from;
+                toCurrency.value = urlParams.to;
 
                 async function performConversion(forceUpdate = false) {
                     try {
@@ -443,6 +295,8 @@
                         result.value = convertedAmount.toFixed(2);
                         rateInfo.textContent = `1 ${fromCurrency.value} = ${targetRate.toFixed(4)} ${toCurrency.value}`;
                         lastUpdate.textContent = `Last updated: ${formatDate(new Date())}`;
+
+                        updateUrlParameters(amount.value, fromCurrency.value, toCurrency.value);
 
                     } catch (error) {
                         console.error('Conversion error:', error);
@@ -475,7 +329,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeNavigation();
             initializeHeroSection();
-            initializeFeaturesSection();
         });
     </script>
 </body>
