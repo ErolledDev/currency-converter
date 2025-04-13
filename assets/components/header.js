@@ -98,20 +98,59 @@ export function initializeHeader() {
     `;
 
     document.querySelector('.header').innerHTML = header;
+    initializeMobileMenu();
     initializeMegaMenu();
+}
+
+function initializeMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    const megaMenu = document.querySelector('.mega-menu');
+    const hasMegaMenu = document.querySelector('.has-mega-menu');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        menuToggle.querySelector('.material-icons').textContent = 
+            nav.classList.contains('active') ? 'close' : 'menu';
+        
+        // Close mega menu when closing mobile menu
+        if (!nav.classList.contains('active')) {
+            megaMenu.classList.remove('active');
+        }
+    });
+
+    // Handle mega menu on mobile
+    if (window.innerWidth <= 768) {
+        hasMegaMenu.addEventListener('click', (e) => {
+            e.preventDefault();
+            megaMenu.classList.toggle('active');
+        });
+    }
+
+    // Close menus when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.header')) {
+            nav.classList.remove('active');
+            megaMenu.classList.remove('active');
+            menuToggle.querySelector('.material-icons').textContent = 'menu';
+        }
+    });
 }
 
 function initializeMegaMenu() {
     const megaMenuTrigger = document.querySelector('.has-mega-menu');
     const megaMenu = document.querySelector('.mega-menu');
 
-    megaMenuTrigger.addEventListener('mouseenter', () => {
-        megaMenu.classList.add('active');
-    });
+    // Only use hover for desktop
+    if (window.innerWidth > 768) {
+        megaMenuTrigger.addEventListener('mouseenter', () => {
+            megaMenu.classList.add('active');
+        });
 
-    megaMenu.addEventListener('mouseleave', () => {
-        megaMenu.classList.remove('active');
-    });
+        megaMenu.addEventListener('mouseleave', () => {
+            megaMenu.classList.remove('active');
+        });
+    }
 
     updateMegaMenuRates();
     setInterval(updateMegaMenuRates, 60000);

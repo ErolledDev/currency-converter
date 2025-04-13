@@ -17,6 +17,8 @@
     --red: #ea4335;
     --shadow-sm: 0 1px 2px rgba(60, 64, 67, 0.3);
     --shadow: 0 2px 6px rgba(60, 64, 67, 0.15);
+    --header-height: 64px;
+    --header-height-mobile: 56px;
 }
 
 body {
@@ -25,6 +27,7 @@ body {
     color: var(--text-primary);
     background-color: var(--background-light);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
@@ -37,10 +40,10 @@ body {
 .header {
     background-color: var(--background-white);
     border-bottom: 1px solid var(--border-color);
-    height: 64px;
+    height: var(--header-height);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: var(--shadow-sm);
 }
 
@@ -55,6 +58,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    z-index: 1001;
 }
 
 .logo h1 {
@@ -89,6 +93,7 @@ body {
     border-radius: 4px;
     transition: all 0.2s;
     font-weight: 500;
+    display: block;
 }
 
 .nav ul li a:hover,
@@ -104,6 +109,148 @@ body {
     color: var(--text-primary);
     cursor: pointer;
     padding: 8px;
+    z-index: 1001;
+}
+
+/* Mega Menu */
+.mega-menu {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 32px 0;
+    z-index: 999;
+}
+
+.mega-menu.active {
+    display: block;
+}
+
+.mega-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 0 24px;
+}
+
+.mega-menu-section h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.mega-menu-list {
+    list-style: none;
+}
+
+.mega-menu-list li {
+    margin-bottom: 12px;
+}
+
+.mega-menu-list a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.mega-menu-list a:hover {
+    color: var(--primary-color);
+    background-color: #e8f0fe;
+}
+
+.mega-menu-list .rate {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        height: var(--header-height-mobile);
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: fixed;
+        top: var(--header-height-mobile);
+        left: 0;
+        right: 0;
+        background: var(--background-white);
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow);
+        margin-left: 0;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav ul li a {
+        padding: 16px 24px;
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .mega-menu {
+        top: var(--header-height-mobile);
+        padding: 16px 0;
+        position: fixed;
+        height: calc(100vh - var(--header-height-mobile));
+        overflow-y: auto;
+    }
+
+    .mega-menu-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .mega-menu-section {
+        padding: 0 24px;
+    }
+
+    .mega-menu-section h3 {
+        font-size: 1rem;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .mega-menu-list a {
+        padding: 12px 8px;
+        font-size: 1rem;
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
 }
 
 /* Hero Section */
@@ -371,253 +518,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        height: 56px;
-    }
-
-    .nav {
-        display: none;
-        margin-left: 0;
-    }
-
-    .nav.active {
-        display: block;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        background: var(--background-white);
-        border-bottom: 1px solid var(--border-color);
-        padding: 8px 0;
-        box-shadow: var(--shadow);
-    }
-
-    .nav ul {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .nav ul li a {
-        display: block;
-        padding: 16px 24px;
-        border-radius: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .hero {
-        padding: 32px 0;
-    }
-
-    .hero-flex-container {
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .hero-content h2 {
-        font-size: 24px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .features-list {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .converter-card {
-        margin: 0;
-        padding: 20px;
-    }
-
-    .input-group {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .input-group input,
-    .input-group select {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h2 {
-        font-size: 20px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .convert-btn {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
-
-    .footer-section h3 {
-        font-size: 18px;
-    }
-}
-
-/* Currency Conversion Page Styles */
-.conversion-article {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.conversion-header {
-    margin-bottom: 32px;
-}
-
-.conversion-header h1 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-}
-
-.conversion-header .meta {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.conversion-content {
-    line-height: 1.8;
-    color: var(--text-primary);
-}
-
-.conversion-content p {
-    margin-bottom: 20px;
-}
-
-.conversion-content h2 {
-    font-size: 1.8rem;
-    margin: 32px 0 16px;
-    color: var(--text-primary);
-}
-
-.conversion-content h3 {
-    font-size: 1.4rem;
-    margin: 24px 0 12px;
-    color: var(--text-primary);
-}
-
-.live-rate-widget {
-    background: var(--background-white);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 32px 0;
-    box-shadow: var(--shadow);
-}
-
-.live-rate-widget h3 {
-    font-size: 1.2rem;
-    margin-bottom: 16px;
-    color: var(--text-primary);
-}
-
-.rate-display {
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.rate-update-time {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* Mega Menu Styles */
-.mega-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--background-white);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    padding: 32px 0;
-    z-index: 1000;
-}
-
-.mega-menu.active {
-    display: block;
-}
-
-.mega-menu-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    padding: 0 24px;
-}
-
-.mega-menu-section {
-    min-width: 200px;
-}
-
-.mega-menu-section h3 {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 500;
-}
-
-.mega-menu-list {
-    list-style: none;
-}
-
-.mega-menu-list li {
-    margin-bottom: 12px;
-}
-
-.mega-menu-list a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s;
-}
-
-.mega-menu-list a:hover {
-    color: var(--primary-color);
-}
-
-.mega-menu-list .rate {
-    font-size: 0.8rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .mega-menu-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .conversion-header h1 {
-        font-size: 2rem;
-    }
-
-    .rate-display {
-        font-size: 1.6rem;
-    }
-}
-
-/* Currency Conversion Page Styles */
+/* Currency Page Styles */
 .currency-page {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -632,6 +533,8 @@ body {
     border-radius: 12px;
     padding: 32px;
     box-shadow: var(--shadow);
+    margin: 40px auto;
+    max-width: 800px;
 }
 
 /* Breadcrumb Navigation */
@@ -729,7 +632,8 @@ body {
     color: white;
 }
 
-.live-rate-widget h2 {
+.live-rate-widget h2,
+.live-rate-widget h3 {
     font-size: 1.4rem;
     margin-bottom: 16px;
     color: white;
@@ -972,7 +876,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* Additional Mobile Responsive Styles */
 @media (max-width: 1024px) {
     .currency-page {
         grid-template-columns: 1fr;
@@ -981,9 +885,35 @@ body {
     .currency-sidebar {
         position: static;
     }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding: 32px 0;
+    }
+
+    .hero-flex-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .features-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .conversion-header h1 {
         font-size: 2rem;
     }
@@ -1002,12 +932,30 @@ body {
 
     .conversion-article {
         padding: 20px;
+        margin: 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .currency-page {
-        padding: 20px 16px;
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 
     .conversion-header h1 {
@@ -1018,11 +966,17 @@ body {
         font-size: 1.6rem;
     }
 
-    .table-of-contents {
+    .live-rate-widget {
+        padding: 24px;
+    }
+
+    .info-box,
+    .factor-card,
+    .forecast-card {
         padding: 16px;
     }
 
-    .live-rate-widget {
-        padding: 20px;
+    .table-of-contents {
+        padding: 16px;
     }
 }
