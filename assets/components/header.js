@@ -25,53 +25,269 @@ export function initializeHeader() {
                 <div class="mega-menu-section">
                     <h3>Major Pairs</h3>
                     <ul class="mega-menu-list">
-                        <li><a href="/assets/pages/converter/usd-eur.html">USD to EUR<span class="rate" data-from="USD" data-to="EUR"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-usd.html">EUR to USD<span class="rate" data-from="EUR" data-to="USD"></span></a></li>
-                        <li><a href="/assets/pages/converter/gbp-usd.html">GBP to USD<span class="rate" data-from="GBP" data-to="USD"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-jpy.html">USD to JPY<span class="rate" data-from="USD" data-to="JPY"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-gbp.html">EUR to GBP<span class="rate" data-from="EUR" data-to="GBP"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-chf.html">USD to CHF<span class="rate" data-from="USD" data-to="CHF"></span></a></li>
-                        <li><a href="/assets/pages/converter/aud-usd.html">AUD to USD<span class="rate" data-from="AUD" data-to="USD"></span></a></li>
-                        <li><a href="/assets/pages/converter/nzd-usd.html">NZD to USD<span class="rate" data-from="NZD" data-to="USD"></span></a></li>
+                        <li><a href="/assets/pages/converter/usd-eur.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to EUR
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="EUR"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-usd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to USD
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="USD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/gbp-usd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GBP" class="flag-icon">
+                                GBP to USD
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="GBP" data-to="USD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-jpy.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to JPY
+                                <img src="https://flagcdn.com/w20/jp.png" alt="JPY" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="JPY"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-gbp.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to GBP
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GBP" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="GBP"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-chf.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to CHF
+                                <img src="https://flagcdn.com/w20/ch.png" alt="CHF" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="CHF"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/aud-usd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/au.png" alt="AUD" class="flag-icon">
+                                AUD to USD
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="AUD" data-to="USD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/nzd-usd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/nz.png" alt="NZD" class="flag-icon">
+                                NZD to USD
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="NZD" data-to="USD"></span>
+                        </a></li>
                     </ul>
                 </div>
                 <div class="mega-menu-section">
                     <h3>European Pairs</h3>
                     <ul class="mega-menu-list">
-                        <li><a href="/assets/pages/converter/eur-chf.html">EUR to CHF<span class="rate" data-from="EUR" data-to="CHF"></span></a></li>
-                        <li><a href="/assets/pages/converter/gbp-eur.html">GBP to EUR<span class="rate" data-from="GBP" data-to="EUR"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-sek.html">EUR to SEK<span class="rate" data-from="EUR" data-to="SEK"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-nok.html">EUR to NOK<span class="rate" data-from="EUR" data-to="NOK"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-pln.html">EUR to PLN<span class="rate" data-from="EUR" data-to="PLN"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-czk.html">EUR to CZK<span class="rate" data-from="EUR" data-to="CZK"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-huf.html">EUR to HUF<span class="rate" data-from="EUR" data-to="HUF"></span></a></li>
-                        <li><a href="/assets/pages/converter/eur-ron.html">EUR to RON<span class="rate" data-from="EUR" data-to="RON"></span></a></li>
+                        <li><a href="/assets/pages/converter/eur-chf.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to CHF
+                                <img src="https://flagcdn.com/w20/ch.png" alt="CHF" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="CHF"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/gbp-eur.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GBP" class="flag-icon">
+                                GBP to EUR
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="GBP" data-to="EUR"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-sek.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to SEK
+                                <img src="https://flagcdn.com/w20/se.png" alt="SEK" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="SEK"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-nok.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to NOK
+                                <img src="https://flagcdn.com/w20/no.png" alt="NOK" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="NOK"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-pln.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to PLN
+                                <img src="https://flagcdn.com/w20/pl.png" alt="PLN" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="PLN"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-czk.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to CZK
+                                <img src="https://flagcdn.com/w20/cz.png" alt="CZK" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="CZK"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-huf.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to HUF
+                                <img src="https://flagcdn.com/w20/hu.png" alt="HUF" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="HUF"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/eur-ron.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EUR" class="flag-icon">
+                                EUR to RON
+                                <img src="https://flagcdn.com/w20/ro.png" alt="RON" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="EUR" data-to="RON"></span>
+                        </a></li>
                     </ul>
                 </div>
                 <div class="mega-menu-section">
                     <h3>Asian Pairs</h3>
                     <ul class="mega-menu-list">
-                        <li><a href="/assets/pages/converter/usd-cny.html">USD to CNY<span class="rate" data-from="USD" data-to="CNY"></span></a></li>
-                        <li><a href="/assets/pages/converter/jpy-usd.html">JPY to USD<span class="rate" data-from="JPY" data-to="USD"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-sgd.html">USD to SGD<span class="rate" data-from="USD" data-to="SGD"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-hkd.html">USD to HKD<span class="rate" data-from="USD" data-to="HKD"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-krw.html">USD to KRW<span class="rate" data-from="USD" data-to="KRW"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-thb.html">USD to THB<span class="rate" data-from="USD" data-to="THB"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-myr.html">USD to MYR<span class="rate" data-from="USD" data-to="MYR"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-php.html">USD to PHP<span class="rate" data-from="USD" data-to="PHP"></span></a></li>
+                        <li><a href="/assets/pages/converter/usd-cny.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to CNY
+                                <img src="https://flagcdn.com/w20/cn.png" alt="CNY" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="CNY"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/jpy-usd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/jp.png" alt="JPY" class="flag-icon">
+                                JPY to USD
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="JPY" data-to="USD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-sgd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to SGD
+                                <img src="https://flagcdn.com/w20/sg.png" alt="SGD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="SGD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-hkd.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to HKD
+                                <img src="https://flagcdn.com/w20/hk.png" alt="HKD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="HKD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-krw.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to KRW
+                                <img src="https://flagcdn.com/w20/kr.png" alt="KRW" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="KRW"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-thb.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to THB
+                                <img src="https://flagcdn.com/w20/th.png" alt="THB" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="THB"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-myr.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to MYR
+                                <img src="https://flagcdn.com/w20/my.png" alt="MYR" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="MYR"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-php.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to PHP
+                                <img src="https://flagcdn.com/w20/ph.png" alt="PHP" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="PHP"></span>
+                        </a></li>
                     </ul>
                 </div>
                 <div class="mega-menu-section">
                     <h3>Other Popular Pairs</h3>
                     <ul class="mega-menu-list">
-                        <li><a href="/assets/pages/converter/usd-cad.html">USD to CAD<span class="rate" data-from="USD" data-to="CAD"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-mxn.html">USD to MXN<span class="rate" data-from="USD" data-to="MXN"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-brl.html">USD to BRL<span class="rate" data-from="USD" data-to="BRL"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-zar.html">USD to ZAR<span class="rate" data-from="USD" data-to="ZAR"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-inr.html">USD to INR<span class="rate" data-from="USD" data-to="INR"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-try.html">USD to TRY<span class="rate" data-from="USD" data-to="TRY"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-ils.html">USD to ILS<span class="rate" data-from="USD" data-to="ILS"></span></a></li>
-                        <li><a href="/assets/pages/converter/usd-rub.html">USD to RUB<span class="rate" data-from="USD" data-to="RUB"></span></a></li>
+                        <li><a href="/assets/pages/converter/usd-cad.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to CAD
+                                <img src="https://flagcdn.com/w20/ca.png" alt="CAD" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="CAD"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-mxn.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to MXN
+                                <img src="https://flagcdn.com/w20/mx.png" alt="MXN" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="MXN"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-brl.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to BRL
+                                <img src="https://flagcdn.com/w20/br.png" alt="BRL" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="BRL"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-zar.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to ZAR
+                                <img src="https://flagcdn.com/w20/za.png" alt="ZAR" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="ZAR"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-inr.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to INR
+                                <img src="https://flagcdn.com/w20/in.png" alt="INR" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="INR"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-try.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to TRY
+                                <img src="https://flagcdn.com/w20/tr.png" alt="TRY" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="TRY"></span>
+                        </a></li>
+                        <li><a href="/assets/pages/converter/usd-ils.html">
+                            <span class="currency-pair">
+                                <img src="https://flagcdn.com/w20/us.png" alt="USD" class="flag-icon">
+                                USD to ILS
+                                <img src="https://flagcdn.com/w20/il.png" alt="ILS" class="flag-icon">
+                            </span>
+                            <span class="rate" data-from="USD" data-to="ILS"></span>
+                        </a></li>
                     </ul>
                 </div>
             </div>
@@ -138,7 +354,6 @@ async function updateMegaMenuRates() {
         const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'NZD', 'CHF'];
         const rates = {};
 
-        // Fetch rates for each base currency
         await Promise.all(currencies.map(async (currency) => {
             const response = await fetch(`${API_BASE_URL}/latest?from=${currency}`);
             const data = await response.json();
