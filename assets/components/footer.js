@@ -23,10 +23,10 @@ export function initializeFooter() {
                 <div class="footer-section">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="/pages/about.html">About Us</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/pages/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
