@@ -14,10 +14,10 @@ export function initializeFooter() {
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#glossary">Currency Glossary</a></li>
-                        <li><a href="#news">Latest News</a></li>
+                        <li><a href="/pages/help.html">Help Center</a></li>
+                        <li><a href="/pages/faq.html">FAQ</a></li>
+                        <li><a href="/pages/glossary.html">Currency Glossary</a></li>
+                        <li><a href="/pages/news.html">Latest News</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

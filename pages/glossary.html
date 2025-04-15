@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Glossary - Currency Exchange | Financial Terms Explained</title>
+    <meta name="description" content="Comprehensive glossary of currency and forex terms. Learn the terminology used in currency exchange and international finance.">
+    <meta name="keywords" content="currency glossary, forex terms, financial terminology, exchange rate terms">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header class="header"></header>
+
+    <main class="glossary-page">
+        <div class="container">
+            <section class="hero-section">
+                <h1>Currency Glossary</h1>
+                <p class="subtitle">Understanding currency exchange terminology</p>
+            </section>
+
+            <div class="glossary-content">
+                <nav class="glossary-nav">
+                    <ul>
+                        <li><a href="#a">A</a></li>
+                        <li><a href="#b">B</a></li>
+                        <li><a href="#c">C</a></li>
+                        <!-- Add more letters -->
+                    </ul>
+                </nav>
+
+                <section id="a" class="glossary-section">
+                    <h2>A</h2>
+                    <dl class="glossary-list">
+                        <dt>Ask Price</dt>
+                        <dd>The price at which a currency can be purchased. Also known as the offer price.</dd>
+                        
+                        <dt>Arbitrage</dt>
+                        <dd>The simultaneous buying and selling of currencies in different markets to profit from price differences.</dd>
+                    </dl>
+                </section>
+
+                <section id="b" class="glossary-section">
+                    <h2>B</h2>
+                    <dl class="glossary-list">
+                        <dt>Base Currency</dt>
+                        <dd>The first currency quoted in a currency pair. For example, in EUR/USD, EUR is the base currency.</dd>
+                        
+                        <dt>Bid Price</dt>
+                        <dd>The price at which a currency can be sold.</dd>
+                    </dl>
+                </section>
+
+                <section id="c" class="glossary-section">
+                    <h2>C</h2>
+                    <dl class="glossary-list">
+                        <dt>Currency Pair</dt>
+                        <dd>The quotation of two different currencies, with the value of one currency being quoted against the other.</dd>
+                        
+                        <dt>Cross Rate</dt>
+                        <dd>An exchange rate between two currencies, both of which are not the official currency of the country in which the exchange rate quote is given.</dd>
+                    </dl>
+                </section>
+
+                <!-- Add more sections for other letters -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script type="module">
+        import { initializeHeader } from '/assets/components/header.js';
+        import { initializeFooter } from '/assets/components/footer.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeHeader();
+            initializeFooter();
+        });
+    </script>
+</body>
+</html>
