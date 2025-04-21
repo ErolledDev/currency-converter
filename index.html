@@ -14,6 +14,138 @@
 
     <main>
         <div id="hero-container"></div>
+
+        <section id="top-currencies" class="market-section">
+            <div class="container">
+                <h2>Top Currencies</h2>
+                <div class="currency-grid">
+                    <div class="currency-card" data-currency="EUR">
+                        <div class="currency-header">
+                            <img src="https://flagcdn.com/w40/eu.png" alt="EUR" class="currency-flag">
+                            <h3>Euro</h3>
+                            <span class="currency-code">EUR</span>
+                        </div>
+                        <div class="rate-display">Loading...</div>
+                        <div class="rate-change">
+                            <span class="change-value"></span>
+                            <span class="change-period">24h change</span>
+                        </div>
+                    </div>
+                    <div class="currency-card" data-currency="GBP">
+                        <div class="currency-header">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="GBP" class="currency-flag">
+                            <h3>British Pound</h3>
+                            <span class="currency-code">GBP</span>
+                        </div>
+                        <div class="rate-display">Loading...</div>
+                        <div class="rate-change">
+                            <span class="change-value"></span>
+                            <span class="change-period">24h change</span>
+                        </div>
+                    </div>
+                    <div class="currency-card" data-currency="JPY">
+                        <div class="currency-header">
+                            <img src="https://flagcdn.com/w40/jp.png" alt="JPY" class="currency-flag">
+                            <h3>Japanese Yen</h3>
+                            <span class="currency-code">JPY</span>
+                        </div>
+                        <div class="rate-display">Loading...</div>
+                        <div class="rate-change">
+                            <span class="change-value"></span>
+                            <span class="change-period">24h change</span>
+                        </div>
+                    </div>
+                    <div class="currency-card" data-currency="CHF">
+                        <div class="currency-header">
+                            <img src="https://flagcdn.com/w40/ch.png" alt="CHF" class="currency-flag">
+                            <h3>Swiss Franc</h3>
+                            <span class="currency-code">CHF</span>
+                        </div>
+                        <div class="rate-display">Loading...</div>
+                        <div class="rate-change">
+                            <span class="change-value"></span>
+                            <span class="change-period">24h change</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="markets" class="market-section">
+            <div class="container">
+                <h2>Markets Overview</h2>
+                <div class="markets-grid">
+                    <div class="market-card">
+                        <h3>European Markets</h3>
+                        <div class="market-pairs">
+                            <div class="market-pair" data-from="EUR" data-to="USD"></div>
+                            <div class="market-pair" data-from="EUR" data-to="GBP"></div>
+                            <div class="market-pair" data-from="EUR" data-to="CHF"></div>
+                        </div>
+                    </div>
+                    <div class="market-card">
+                        <h3>Asian Markets</h3>
+                        <div class="market-pairs">
+                            <div class="market-pair" data-from="USD" data-to="JPY"></div>
+                            <div class="market-pair" data-from="USD" data-to="CNY"></div>
+                            <div class="market-pair" data-from="USD" data-to="SGD"></div>
+                        </div>
+                    </div>
+                    <div class="market-card">
+                        <h3>Americas</h3>
+                        <div class="market-pairs">
+                            <div class="market-pair" data-from="USD" data-to="CAD"></div>
+                            <div class="market-pair" data-from="USD" data-to="MXN"></div>
+                            <div class="market-pair" data-from="USD" data-to="BRL"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="market-section">
+            <div class="container">
+                <h2>Latest Market News</h2>
+                <div class="news-grid">
+                    <article class="news-card featured">
+                        <div class="news-content">
+                            <span class="news-category">Market Analysis</span>
+                            <h3>USD Strengthens Against Major Currencies</h3>
+                            <p>The US Dollar continued its upward trend against major currencies following strong economic data...</p>
+                            <div class="news-meta">
+                                <span class="news-date">Today</span>
+                                <a href="/pages/news.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-content">
+                            <span class="news-category">Currency Updates</span>
+                            <h3>Euro Reaches New Heights Against Yen</h3>
+                            <p>The European currency showed remarkable strength in Asian trading...</p>
+                            <div class="news-meta">
+                                <span class="news-date">Yesterday</span>
+                                <a href="/pages/news.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-content">
+                            <span class="news-category">Economic Policy</span>
+                            <h3>Central Banks Signal Policy Changes</h3>
+                            <p>Major central banks hint at potential shifts in monetary policy...</p>
+                            <div class="news-meta">
+                                <span class="news-date">2 days ago</span>
+                                <a href="/pages/news.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-footer">
+                    <a href="/pages/news.html" class="view-all-button">View All News</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer"></footer>
@@ -23,10 +155,70 @@
         import { initializeFooter } from '/assets/components/footer.js';
         import { initializeHeroSection } from '/assets/script.js';
 
+        const API_BASE_URL = "https://api.frankfurter.app";
+
+        async function updateTopCurrencies() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/latest?from=USD`);
+                const data = await response.json();
+
+                document.querySelectorAll('.currency-card').forEach(card => {
+                    const currency = card.dataset.currency;
+                    const rate = data.rates[currency];
+                    if (rate) {
+                        card.querySelector('.rate-display').textContent = `1 USD = ${rate.toFixed(4)} ${currency}`;
+                        
+                        // Simulate change for demo
+                        const change = ((Math.random() * 2) - 1).toFixed(2);
+                        const changeEl = card.querySelector('.change-value');
+                        changeEl.textContent = `${change}%`;
+                        changeEl.className = 'change-value ' + (parseFloat(change) >= 0 ? 'positive' : 'negative');
+                    }
+                });
+            } catch (error) {
+                console.error('Error updating top currencies:', error);
+            }
+        }
+
+        async function updateMarkets() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/latest?from=USD`);
+                const data = await response.json();
+
+                document.querySelectorAll('.market-pair').forEach(pair => {
+                    const from = pair.dataset.from;
+                    const to = pair.dataset.to;
+                    const rate = data.rates[to];
+                    
+                    if (rate) {
+                        pair.innerHTML = `
+                            <div class="pair-info">
+                                <span class="pair-name">${from}/${to}</span>
+                                <span class="pair-rate">${rate.toFixed(4)}</span>
+                            </div>
+                            <div class="pair-change ${Math.random() > 0.5 ? 'positive' : 'negative'}">
+                                ${((Math.random() * 2) - 1).toFixed(2)}%
+                            </div>
+                        `;
+                    }
+                });
+            } catch (error) {
+                console.error('Error updating markets:', error);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             initializeHeader();
             initializeFooter();
             initializeHeroSection();
+            updateTopCurrencies();
+            updateMarkets();
+            
+            // Update rates every minute
+            setInterval(() => {
+                updateTopCurrencies();
+                updateMarkets();
+            }, 60000);
         });
     </script>
 </body>

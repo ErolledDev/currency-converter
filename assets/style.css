@@ -1954,3 +1954,205 @@ body {
         padding: 16px;
     }
 }
+
+/* Add to the end of your existing CSS file */
+
+/* Market Sections */
+.market-section {
+    padding: 64px 0;
+    background: var(--background-white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.market-section h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+}
+
+/* Top Currencies */
+.currency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.currency-card {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.currency-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.currency-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.currency-flag {
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.currency-header h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.currency-code {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.rate-display {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.rate-change {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.change-value {
+    font-weight: 500;
+}
+
+.change-value.positive {
+    color: var(--green);
+}
+
+.change-value.negative {
+    color: var(--red);
+}
+
+.change-period {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Markets Overview */
+.markets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.market-card {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.market-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.market-pairs {
+    display: grid;
+    gap: 16px;
+}
+
+.market-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: var(--background-white);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.market-pair:hover {
+    transform: translateX(4px);
+}
+
+.pair-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pair-name {
+    font-weight: 500;
+}
+
+.pair-rate {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.pair-change {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.pair-change.positive {
+    color: var(--green);
+    background: rgba(52, 168, 83, 0.1);
+}
+
+.pair-change.negative {
+    color: var(--red);
+    background: rgba(234, 67, 53, 0.1);
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.section-footer {
+    text-align: center;
+}
+
+.view-all-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .market-section {
+        padding: 32px 0;
+    }
+
+    .market-section h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .currency-grid,
+    .markets-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
