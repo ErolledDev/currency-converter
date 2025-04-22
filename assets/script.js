@@ -114,7 +114,7 @@ export function initializeHeroSection() {
                     
                     <div class="converter-wrapper">
                         <div class="converter-card">
-                            <div class="last-update"></div>
+                            <h3 class="last-update"></h3>
                             <div class="converter-form">
                                 <div class="input-group">
                                     <input type="number" id="amount" value="1" min="0" step="any" aria-label="Amount" placeholder="Enter amount">
